@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Latte Lab",
+    "address": "ул. Абая, 55",
+    "lat": 43.238949,
+    "lng": 76.889709,
+    "rating": 4.8
+  },
+  {
+    "id": 2,
+    "name": "Coffee Boom",
+    "address": "пр. Достык, 99",
+    "lat": 43.240112,
+    "lng": 76.905203,
+    "rating": 4.6
+  },
+  {
+    "id": 3,
+    "name": "Brew Time",
+    "address": "ул. Назарбаева, 33",
+    "lat": 43.235321,
+    "lng": 76.910431,
+    "rating": 4.9
+  }
+]
