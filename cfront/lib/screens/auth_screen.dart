@@ -1,7 +1,6 @@
-import 'dart:convert';
-import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
+﻿import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import '../services/api_service.dart';
 import '../theme.dart';
 import 'home_screen.dart';
 import '../widgets/gradient_background.dart';
@@ -20,8 +19,6 @@ class _AuthScreenState extends State<AuthScreen> {
 
   bool _isLogin = true;
   String _message = '';
-
-  final String apiBase = 'http://172.20.10.2:8080/api/auth';
 
   /// 🔐 Проверка длины пароля
   bool _isPasswordValid(String password) {
@@ -51,25 +48,17 @@ class _AuthScreenState extends State<AuthScreen> {
     }
 
     try {
-      final uri = Uri.parse(
-        _isLogin ? '$apiBase/login' : '$apiBase/register',
-      );
+      final result = _isLogin
+          ? await ApiService.login(email, password)
+          : await ApiService.register(email, password);
 
-      final response = await http.post(
-        uri,
-        headers: {'Content-Type': 'application/json'},
-        body: jsonEncode({
-          'email': email,
-          'password': password,
-        }),
-      );
-
-      final data = jsonDecode(response.body);
-
-      if (response.statusCode == 200 && data['success'] == true) {
+      if (result['success'] == true) {
         if (_isLogin) {
           final prefs = await SharedPreferences.getInstance();
-          await prefs.setString('userEmail', data['email'] ?? email);
+          await prefs.setString('userEmail', email);
+          if (result['role'] != null) {
+            await prefs.setString('userRole', result['role']);
+          }
 
           if (!mounted) return;
           Navigator.pushReplacement(
@@ -83,10 +72,10 @@ class _AuthScreenState extends State<AuthScreen> {
           });
         }
       } else {
-        setState(() => _message = data['message'] ?? 'Ошибка авторизации.');
+        setState(() => _message = result['message'] ?? 'Ошибка авторизации');
       }
     } catch (e) {
-      setState(() => _message = 'Ошибка соединения с сервером.');
+      setState(() => _message = 'Ошибка соединения с сервером');
     }
   }
 

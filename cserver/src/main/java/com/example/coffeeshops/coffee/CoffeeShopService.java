@@ -16,4 +16,16 @@ public class CoffeeShopService {
     public List<CoffeeShop> getAllShops() {
         return repository.findAll();
     }
+
+    public CoffeeShop createShop(CoffeeShop shop) {
+        return repository.save(shop);
+    }
+
+    public boolean deleteShop(Long id) {
+        if (!repository.existsById(id)) {
+            return false;
+        }
+        repository.deleteById(id);
+        return true;
+    }
 }

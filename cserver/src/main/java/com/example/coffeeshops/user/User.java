@@ -16,19 +16,23 @@ public class User {
     @Column(nullable = false)
     private String password;
 
+    // 🔑 РОЛЬ
+    @Column(nullable = false)
+    private String role; // USER или ADMIN
+
     // 🔹 ПУСТОЙ КОНСТРУКТОР (обязателен для JPA)
     public User() {
     }
 
     // 🔹 КОНСТРУКТОР
-    public User(Long id, String email, String password) {
+    public User(Long id, String email, String password, String role) {
         this.id = id;
         this.email = email;
         this.password = password;
+        this.role = role;
     }
 
-    // 🔹 ГЕТТЕРЫ И СЕТТЕРЫ (ЯВНО)
-
+    // 🔹 ГЕТТЕРЫ И СЕТТЕРЫ
     public Long getId() {
         return id;
     }
@@ -48,8 +52,16 @@ public class User {
     public String getPassword() {
         return password;
     }
-    
+
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 }

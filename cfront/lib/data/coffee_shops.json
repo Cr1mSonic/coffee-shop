@@ -45,6 +45,7 @@
   { "id": 37, "name": "Dark Bean", "address": "ул. Утепова, 23", "lat": 43.219441, "lng": 76.889112, "rating": 4.6 },
   { "id": 38, "name": "Flat White", "address": "ул. Достык, 48", "lat": 43.248881, "lng": 76.918112, "rating": 4.9 },
   { "id": 39, "name": "Café Central", "address": "ул. Ташкентская, 70", "lat": 43.255331, "lng": 76.881774, "rating": 4.7 },
+<<<<<<< HEAD
   { "id": 40, "name": "Bean Factory", "address": "ул. Жандосова, 45", "lat": 43.223998, "lng": 76.872441, "rating": 4.6 },
 
   { "id": 41, "name": "Coffee Yard", "address": "ул. Серкебаева, 17", "lat": 43.237441, "lng": 76.893112, "rating": 4.5 },
@@ -59,3 +60,7 @@
   { "id": 50, "name": "Coffee Line", "address": "ул. Жибек Жолы, 135", "lat": 43.260881, "lng": 76.946991, "rating": 4.6 }
 ]
 
+=======
+  { "id": 40, "name": "Bean Factory", "address": "ул. Жандосова, 45", "lat": 43.223998, "lng": 76.872441, "rating": 4.6 }
+]
+>>>>>>> 9e3e8e6 (fortnite commit)
