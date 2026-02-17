@@ -1,10 +1,11 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../services/api_service.dart';
 import '../theme.dart';
 import 'home_screen.dart';
 import '../widgets/gradient_background.dart';
 import '../widgets/fancy_app_bar.dart';
+import '../widgets/responsive_frame.dart';
 
 class AuthScreen extends StatefulWidget {
   const AuthScreen({super.key});
@@ -79,6 +80,72 @@ class _AuthScreenState extends State<AuthScreen> {
     }
   }
 
+  Future<void> _showForgotPasswordDialog() async {
+    final emailController = TextEditingController(
+      text: _emailController.text.trim(),
+    );
+    final newPasswordController = TextEditingController();
+
+    await showDialog(
+      context: context,
+      builder: (_) => AlertDialog(
+        title: const Text('Восстановление пароля'),
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            TextField(
+              controller: emailController,
+              decoration: const InputDecoration(hintText: 'Email'),
+            ),
+            const SizedBox(height: 12),
+            TextField(
+              controller: newPasswordController,
+              obscureText: true,
+              decoration: const InputDecoration(hintText: 'Новый пароль'),
+            ),
+          ],
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: const Text('Отмена'),
+          ),
+          ElevatedButton(
+            onPressed: () async {
+              final email = emailController.text.trim();
+              final newPassword = newPasswordController.text.trim();
+
+              if (email.isEmpty || newPassword.isEmpty) {
+                setState(() => _message = 'Заполните email и новый пароль');
+                return;
+              }
+
+              if (!_isPasswordValid(newPassword)) {
+                setState(() {});
+                return;
+              }
+
+              final result = await ApiService.forgotPassword(
+                email,
+                newPassword,
+              );
+              if (!mounted) return;
+
+              Navigator.pop(context);
+              setState(() {
+                _message = result['success'] == true
+                    ? 'Пароль обновлен. Теперь войдите.'
+                    : (result['message'] ?? 'Не удалось восстановить пароль');
+                _isLogin = true;
+              });
+            },
+            child: const Text('Сбросить'),
+          ),
+        ],
+      ),
+    );
+  }
+
   /// 🚀 Переход БЕЗ авторизации
   void _skipAuth() {
     Navigator.pushReplacement(
@@ -92,18 +159,16 @@ class _AuthScreenState extends State<AuthScreen> {
     return Scaffold(
       extendBodyBehindAppBar: true,
       backgroundColor: Colors.transparent,
-      appBar: FancyAppBar(
-        title: _isLogin ? 'Вход' : 'Регистрация',
-      ),
+      appBar: FancyAppBar(title: _isLogin ? 'Вход' : 'Регистрация'),
       body: GradientBackground(
-        child: Center(
+        child: ResponsiveFrame(
+          maxWidth: 520,
           child: SingleChildScrollView(
-            padding: const EdgeInsets.all(24),
             child: Column(
               children: [
                 Icon(
                   Icons.local_cafe_rounded,
-                  size: 80,
+                  size: ResponsiveFrame.isTablet(context) ? 96 : 80,
                   color: AppColors.beige.withOpacity(0.9),
                 ),
                 const SizedBox(height: 24),
@@ -146,7 +211,8 @@ class _AuthScreenState extends State<AuthScreen> {
                     _message,
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                      color: _message.contains('Ошибка') ||
+                      color:
+                          _message.contains('Ошибка') ||
                               _message.contains('Пароль')
                           ? Colors.redAccent
                           : AppColors.beige,
@@ -193,6 +259,17 @@ class _AuthScreenState extends State<AuthScreen> {
                     style: const TextStyle(color: AppColors.beige),
                   ),
                 ),
+                if (_isLogin)
+                  TextButton(
+                    onPressed: _showForgotPasswordDialog,
+                    child: const Text(
+                      'Забыли пароль?',
+                      style: TextStyle(
+                        color: AppColors.beige,
+                        decoration: TextDecoration.underline,
+                      ),
+                    ),
+                  ),
 
                 const SizedBox(height: 10),
 

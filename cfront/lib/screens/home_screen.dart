@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import '../theme.dart';
 import 'map_screen.dart';
 import 'profile_screen.dart';
+import 'coffee_list_screen.dart';
 import '../widgets/gradient_background.dart';
 import '../widgets/fancy_app_bar.dart';
+import '../widgets/responsive_frame.dart';
 import 'ai_chat_screen.dart';
 import 'dart:math';
 
@@ -17,112 +19,138 @@ class HomeScreen extends StatelessWidget {
       extendBodyBehindAppBar: true,
       appBar: const FancyAppBar(title: 'Coffee Radar'),
       body: GradientBackground(
-        child: Center(
-          child: Padding(
-            padding: const EdgeInsets.all(24.0),
-            child: SingleChildScrollView(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Hero(
-                    tag: 'logo',
-                    child: Icon(Icons.local_cafe_rounded,
-                        size: 100, color: AppColors.beige.withOpacity(0.9)),
+        child: ResponsiveFrame(
+          maxWidth: 760,
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Hero(
+                  tag: 'logo',
+                  child: Icon(
+                    Icons.local_cafe_rounded,
+                    size: 100,
+                    color: AppColors.beige.withOpacity(0.9),
                   ),
-                  const SizedBox(height: 20),
-                  const Text(
-                    'Добро пожаловать в Coffee Radar!',
-                    style: TextStyle(
-                      color: AppColors.beige,
-                      fontSize: 26,
-                      fontWeight: FontWeight.bold,
-                      fontFamily: 'Montserrat',
-                      shadows: [
-                        Shadow(
-                          color: Colors.black26,
-                          blurRadius: 8,
-                          offset: Offset(0, 2),
-                        ),
-                      ],
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-                  const SizedBox(height: 10),
-                  const Text(
-                    'Исследуй кофейни Астаны и открывай новые места для вдохновения ☕',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      color: AppColors.lightBrown,
-                      fontSize: 16,
-                      fontFamily: 'OpenSans',
-                    ),
-                  ),
-                  const SizedBox(height: 40),
-                  ElevatedButton.icon(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (_) => const MapScreen()),
-                      );
-                    },
-                    icon: const Icon(Icons.map, color: AppColors.beige),
-                    label: const Text('Карта кофеен'),
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: AppColors.mediumBrown,
-                      foregroundColor: AppColors.beige,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20),
+                ),
+                const SizedBox(height: 20),
+                const Text(
+                  'Добро пожаловать в Coffee Radar!',
+                  style: TextStyle(
+                    color: AppColors.beige,
+                    fontSize: 26,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: 'Montserrat',
+                    shadows: [
+                      Shadow(
+                        color: Colors.black26,
+                        blurRadius: 8,
+                        offset: Offset(0, 2),
                       ),
-                      elevation: 6,
-                    ),
+                    ],
                   ),
-                  const SizedBox(height: 20),
-                  ElevatedButton.icon(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (_) => const ProfileScreen()),
-                      );
-                    },
-                    icon:
-                        const Icon(Icons.person_rounded, color: AppColors.beige),
-                    label: const Text('Профиль'),
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: AppColors.mediumBrown,
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 50, vertical: 15),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(25),
+                  textAlign: TextAlign.center,
+                ),
+                const SizedBox(height: 10),
+                const Text(
+                  'Исследуй кофейни Астаны и открывай новые места для вдохновения ☕',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: AppColors.lightBrown,
+                    fontSize: 16,
+                    fontFamily: 'OpenSans',
+                  ),
+                ),
+                const SizedBox(height: 40),
+                ElevatedButton.icon(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (_) => const MapScreen()),
+                    );
+                  },
+                  icon: const Icon(Icons.map, color: AppColors.beige),
+                  label: const Text('Карта кофеен'),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: AppColors.mediumBrown,
+                    foregroundColor: AppColors.beige,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    elevation: 6,
+                  ),
+                ),
+                const SizedBox(height: 20),
+                ElevatedButton.icon(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => const CoffeeListScreen(),
                       ),
-                      elevation: 8,
-                      shadowColor: AppColors.darkBrown.withOpacity(0.4),
+                    );
+                  },
+                  icon: const Icon(Icons.list_alt, color: AppColors.beige),
+                  label: const Text('Список кофеен'),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: AppColors.mediumBrown,
+                    foregroundColor: AppColors.beige,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20),
                     ),
+                    elevation: 6,
                   ),
-                  const SizedBox(height: 20),
-                  ElevatedButton.icon(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (_) => const AIChatScreen()),
-                      );
-                    },
-                    icon: const Icon(Icons.smart_toy, color: AppColors.beige),
-                    label: const Text('Чат с ИИ'),
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: AppColors.mediumBrown,
-                      foregroundColor: AppColors.beige,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                      elevation: 6,
+                ),
+                const SizedBox(height: 20),
+                ElevatedButton.icon(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (_) => const ProfileScreen()),
+                    );
+                  },
+                  icon: const Icon(
+                    Icons.person_rounded,
+                    color: AppColors.beige,
+                  ),
+                  label: const Text('Профиль'),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: AppColors.mediumBrown,
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 50,
+                      vertical: 15,
                     ),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(25),
+                    ),
+                    elevation: 8,
+                    shadowColor: AppColors.darkBrown.withOpacity(0.4),
                   ),
-                  const SizedBox(height: 40),
+                ),
+                const SizedBox(height: 20),
+                ElevatedButton.icon(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (_) => const AIChatScreen()),
+                    );
+                  },
+                  icon: const Icon(Icons.smart_toy, color: AppColors.beige),
+                  label: const Text('Чат с ИИ'),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: AppColors.mediumBrown,
+                    foregroundColor: AppColors.beige,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    elevation: 6,
+                  ),
+                ),
+                const SizedBox(height: 40),
 
-                  // 🎡 Колесо кофе
-                  const CoffeeWheel(),
-                ],
-              ),
+                // 🎡 Колесо кофе
+                const CoffeeWheel(),
+              ],
             ),
           ),
         ),
@@ -163,10 +191,14 @@ class _CoffeeWheelState extends State<CoffeeWheel>
   @override
   void initState() {
     super.initState();
-    _controller =
-        AnimationController(vsync: this, duration: const Duration(seconds: 4));
-    _animation =
-        CurvedAnimation(parent: _controller, curve: Curves.easeOutQuart);
+    _controller = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 4),
+    );
+    _animation = CurvedAnimation(
+      parent: _controller,
+      curve: Curves.easeOutQuart,
+    );
   }
 
   void _spinWheel() {
@@ -187,8 +219,9 @@ class _CoffeeWheelState extends State<CoffeeWheel>
         context: context,
         builder: (_) => AlertDialog(
           backgroundColor: AppColors.beige,
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20),
+          ),
           title: const Text(
             '☕ Твой напиток дня!',
             textAlign: TextAlign.center,
@@ -250,8 +283,10 @@ class _CoffeeWheelState extends State<CoffeeWheel>
           alignment: Alignment.center,
           children: [
             RotationTransition(
-              turns: Tween(begin: 0.0, end: _angle / (2 * pi))
-                  .animate(_animation),
+              turns: Tween(
+                begin: 0.0,
+                end: _angle / (2 * pi),
+              ).animate(_animation),
               child: Container(
                 width: 200,
                 height: 200,

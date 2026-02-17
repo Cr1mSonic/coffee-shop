@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'auth_screen.dart';
+import '../widgets/responsive_frame.dart';
 
 class OnboardingScreen extends StatelessWidget {
   const OnboardingScreen({super.key});
@@ -10,34 +11,27 @@ class OnboardingScreen extends StatelessWidget {
       body: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(
-            colors: [
-              Color(0xFF4B2C20),
-              Color(0xFF8B5E3C),
-              Color(0xFFD3A36A),
-            ],
+            colors: [Color(0xFF4B2C20), Color(0xFF8B5E3C), Color(0xFFD3A36A)],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
         ),
         child: SafeArea(
-          child: Padding(
-            padding: const EdgeInsets.all(24.0),
+          child: ResponsiveFrame(
+            maxWidth: 720,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Column(
                   children: [
                     const SizedBox(height: 80),
-                    Image.asset(
-                      'assets/images/logo.png',
-                      height: 120,
-                    ),
+                    Image.asset('assets/images/logo.png', height: 120),
                     const SizedBox(height: 30),
                     const Text(
                       'Coffee Radar',
                       style: TextStyle(
                         fontFamily: 'Montserrat',
-                        fontSize: 36,
+                        fontSize: 32,
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
                       ),
