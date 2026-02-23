@@ -1,0 +1,402 @@
+[
+  {
+    "id": 1,
+    "name": "Latte Lab",
+    "address": "ул. Абая, 55",
+    "lat": 51.137694,
+    "lng": 71.40996,
+    "rating": 4.8
+  },
+  {
+    "id": 2,
+    "name": "Coffee Boom",
+    "address": "пр. Достык, 99",
+    "lat": 51.139602,
+    "lng": 71.432315,
+    "rating": 4.6
+  },
+  {
+    "id": 3,
+    "name": "Brew Time",
+    "address": "ул. Назарбаева, 33",
+    "lat": 51.131741,
+    "lng": 71.439858,
+    "rating": 4.9
+  },
+  {
+    "id": 4,
+    "name": "Urban Coffee",
+    "address": "ул. Сатпаева, 22",
+    "lat": 51.149447,
+    "lng": 71.387215,
+    "rating": 4.7
+  },
+  {
+    "id": 5,
+    "name": "Black Cup",
+    "address": "ул. Жибек Жолы, 87",
+    "lat": 51.170649,
+    "lng": 71.485566,
+    "rating": 4.5
+  },
+  {
+    "id": 6,
+    "name": "Roast & Go",
+    "address": "ул. Толе би, 101",
+    "lat": 51.157173,
+    "lng": 71.409387,
+    "rating": 4.6
+  },
+  {
+    "id": 7,
+    "name": "Daily Grind",
+    "address": "ул. Кабанбай батыра, 45",
+    "lat": 51.144326,
+    "lng": 71.451896,
+    "rating": 4.8
+  },
+  {
+    "id": 8,
+    "name": "Bean Street",
+    "address": "пр. Аль-Фараби, 77",
+    "lat": 51.119157,
+    "lng": 71.42529,
+    "rating": 4.4
+  },
+  {
+    "id": 9,
+    "name": "Morning Brew",
+    "address": "ул. Байтурсынова, 18",
+    "lat": 51.129319,
+    "lng": 71.396265,
+    "rating": 4.7
+  },
+  {
+    "id": 10,
+    "name": "Coffee Point",
+    "address": "ул. Манаса, 58",
+    "lat": 51.148722,
+    "lng": 71.41823,
+    "rating": 4.6
+  },
+  {
+    "id": 11,
+    "name": "Dark Roast",
+    "address": "ул. Розыбакиева, 91",
+    "lat": 51.12211,
+    "lng": 71.361485,
+    "rating": 4.5
+  },
+  {
+    "id": 12,
+    "name": "Espresso Bar 11",
+    "address": "ул. Ауэзова, 15",
+    "lat": 51.108807,
+    "lng": 71.428489,
+    "rating": 4.6
+  },
+  {
+    "id": 13,
+    "name": "Cafe Noir",
+    "address": "ул. Гоголя, 120",
+    "lat": 51.177847,
+    "lng": 71.47417,
+    "rating": 4.7
+  },
+  {
+    "id": 14,
+    "name": "Bitter Sweet",
+    "address": "ул. Панфилова, 64",
+    "lat": 51.172025,
+    "lng": 71.48075,
+    "rating": 4.8
+  },
+  {
+    "id": 15,
+    "name": "White Mug",
+    "address": "ул. Курмангазы, 88",
+    "lat": 51.153088,
+    "lng": 71.435073,
+    "rating": 4.6
+  },
+  {
+    "id": 16,
+    "name": "Coffee & Talk",
+    "address": "ул. Тимирязева, 42",
+    "lat": 51.116635,
+    "lng": 71.403802,
+    "rating": 4.7
+  },
+  {
+    "id": 17,
+    "name": "Beanology",
+    "address": "ул. Жандосова, 98",
+    "lat": 51.109734,
+    "lng": 71.377485,
+    "rating": 4.4
+  },
+  {
+    "id": 18,
+    "name": "Roasters Hub",
+    "address": "ул. Достык, 132",
+    "lat": 51.133695,
+    "lng": 71.452228,
+    "rating": 4.9
+  },
+  {
+    "id": 19,
+    "name": "Slow Coffee",
+    "address": "ул. Шевченко, 29",
+    "lat": 51.146167,
+    "lng": 71.423843,
+    "rating": 4.6
+  },
+  {
+    "id": 20,
+    "name": "Caffeine Fix",
+    "address": "ул. Кунаева, 44",
+    "lat": 51.168035,
+    "lng": 71.488612,
+    "rating": 4.5
+  },
+  {
+    "id": 21,
+    "name": "Bean & Bar",
+    "address": "ул. Айманова, 77",
+    "lat": 51.128301,
+    "lng": 71.381685,
+    "rating": 4.7
+  },
+  {
+    "id": 22,
+    "name": "Drip Lab",
+    "address": "ул. Сейфуллина, 510",
+    "lat": 51.188825,
+    "lng": 71.469858,
+    "rating": 4.6
+  },
+  {
+    "id": 23,
+    "name": "Golden Bean",
+    "address": "ул. Масанчи, 12",
+    "lat": 51.157846,
+    "lng": 71.44436,
+    "rating": 4.8
+  },
+  {
+    "id": 24,
+    "name": "Coffee Corner",
+    "address": "ул. Богенбай батыра, 56",
+    "lat": 51.154025,
+    "lng": 71.464877,
+    "rating": 4.5
+  },
+  {
+    "id": 25,
+    "name": "Steam Coffee",
+    "address": "ул. Жарокова, 102",
+    "lat": 51.102224,
+    "lng": 71.368714,
+    "rating": 4.4
+  },
+  {
+    "id": 26,
+    "name": "Brew & Co",
+    "address": "ул. Навои, 310",
+    "lat": 51.09,
+    "lng": 71.410054,
+    "rating": 4.7
+  },
+  {
+    "id": 27,
+    "name": "Coffee Room",
+    "address": "ул. Фурманова, 193",
+    "lat": 51.141044,
+    "lng": 71.447332,
+    "rating": 4.6
+  },
+  {
+    "id": 28,
+    "name": "Mokka House",
+    "address": "ул. Рыскулбекова, 28",
+    "lat": 51.095792,
+    "lng": 71.387456,
+    "rating": 4.5
+  },
+  {
+    "id": 29,
+    "name": "Arabica Place",
+    "address": "ул. Сарыарка, 14",
+    "lat": 51.181165,
+    "lng": 71.5,
+    "rating": 4.8
+  },
+  {
+    "id": 30,
+    "name": "Urban Brew",
+    "address": "ул. Жумабаева, 36",
+    "lat": 51.192466,
+    "lng": 71.492206,
+    "rating": 4.6
+  },
+  {
+    "id": 31,
+    "name": "Brew Lab 2.0",
+    "address": "ул. Есенберлина, 9",
+    "lat": 51.188479,
+    "lng": 71.484443,
+    "rating": 4.9
+  },
+  {
+    "id": 32,
+    "name": "Coffee Mood",
+    "address": "ул. Карасай батыра, 142",
+    "lat": 51.159295,
+    "lng": 71.428013,
+    "rating": 4.7
+  },
+  {
+    "id": 33,
+    "name": "Espresso Spot",
+    "address": "ул. Байзакова, 280",
+    "lat": 51.121226,
+    "lng": 71.426887,
+    "rating": 4.6
+  },
+  {
+    "id": 34,
+    "name": "Brew Culture",
+    "address": "ул. Аль-Фараби, 19",
+    "lat": 51.11535,
+    "lng": 71.404594,
+    "rating": 4.8
+  },
+  {
+    "id": 35,
+    "name": "Morning Cup",
+    "address": "ул. Момышулы, 8",
+    "lat": 51.22,
+    "lng": 71.374945,
+    "rating": 4.5
+  },
+  {
+    "id": 36,
+    "name": "Coffee Time",
+    "address": "ул. Саина, 14",
+    "lat": 51.125014,
+    "lng": 71.34,
+    "rating": 4.4
+  },
+  {
+    "id": 37,
+    "name": "Dark Bean",
+    "address": "ул. Утепова, 23",
+    "lat": 51.105686,
+    "lng": 71.409099,
+    "rating": 4.6
+  },
+  {
+    "id": 38,
+    "name": "Flat White",
+    "address": "ул. Достык, 48",
+    "lat": 51.15399,
+    "lng": 71.450941,
+    "rating": 4.9
+  },
+  {
+    "id": 39,
+    "name": "Café Central",
+    "address": "ул. Ташкентская, 70",
+    "lat": 51.164573,
+    "lng": 71.398511,
+    "rating": 4.7
+  },
+  {
+    "id": 40,
+    "name": "Bean Factory",
+    "address": "ул. Жандосова, 45",
+    "lat": 51.113163,
+    "lng": 71.385045,
+    "rating": 4.6
+  },
+  {
+    "id": 41,
+    "name": "Coffee Yard",
+    "address": "ул. Серкебаева, 17",
+    "lat": 51.13522,
+    "lng": 71.41487,
+    "rating": 4.5
+  },
+  {
+    "id": 42,
+    "name": "Brew House",
+    "address": "ул. Радостовца, 152",
+    "lat": 51.117713,
+    "lng": 71.432341,
+    "rating": 4.8
+  },
+  {
+    "id": 43,
+    "name": "Roast Point",
+    "address": "ул. Брусиловского, 10",
+    "lat": 51.174058,
+    "lng": 71.4426,
+    "rating": 4.6
+  },
+  {
+    "id": 44,
+    "name": "Coffee Island",
+    "address": "ул. Розыбакиева, 247",
+    "lat": 51.098204,
+    "lng": 71.364846,
+    "rating": 4.4
+  },
+  {
+    "id": 45,
+    "name": "Bean Wave",
+    "address": "ул. Абылай хана, 92",
+    "lat": 51.172219,
+    "lng": 71.482999,
+    "rating": 4.7
+  },
+  {
+    "id": 46,
+    "name": "Drip & Drop",
+    "address": "ул. Толе би, 180",
+    "lat": 51.151088,
+    "lng": 71.399474,
+    "rating": 4.6
+  },
+  {
+    "id": 47,
+    "name": "Coffee Story",
+    "address": "ул. Сейфуллина, 458",
+    "lat": 51.176239,
+    "lng": 71.465036,
+    "rating": 4.8
+  },
+  {
+    "id": 48,
+    "name": "Bean House",
+    "address": "ул. Муканова, 210",
+    "lat": 51.134301,
+    "lng": 71.429773,
+    "rating": 4.5
+  },
+  {
+    "id": 49,
+    "name": "Espresso Mood",
+    "address": "ул. Ади Шарипова, 39",
+    "lat": 51.161111,
+    "lng": 71.445169,
+    "rating": 4.7
+  },
+  {
+    "id": 50,
+    "name": "Coffee Line",
+    "address": "ул. Жибек Жолы, 135",
+    "lat": 51.173679,
+    "lng": 71.492608,
+    "rating": 4.6
+  }
+]

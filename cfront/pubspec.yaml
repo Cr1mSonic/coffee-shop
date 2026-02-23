@@ -1,0 +1,39 @@
+name: flutter_application_2
+publish_to: "none"
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.9.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  flutter_map: ^6.2.1
+  latlong2: ^0.9.1
+  provider: ^6.1.2
+  hive: ^2.2.3
+  file_picker: ^6.1.1
+  yandex_mapkit: ^3.3.3
+  confetti: ^0.7.0
+  http: ^1.2.0
+  image_picker: ^1.1.1
+  shared_preferences: ^2.3.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/logo.png
+    - lib/data/coffee_shops.json
+
+dependency_overrides:
+  file_picker:
+    git:
+      url: https://github.com/miguelpruivo/flutter_file_picker.git
+      ref: master
